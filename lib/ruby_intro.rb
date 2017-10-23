@@ -21,8 +21,16 @@ def max_2_sum arr
   elsif arr.length == 1	
      return arr[0]	
   else 	
-     arr.sort!
-     return arr[0]+arr[1]
+     j = arr[1]
+     k = arr[0]
+     for i in 0..(arr.length-1)
+        x = arr[i]
+        if j <= x
+           k = j
+           j = x
+        end
+     end
+     return j + k
   end
 end
 
